@@ -2,10 +2,10 @@ resource "aws_instance" "instance_demo" {
   ami           = "${var.amitype}" //calling the variable amitype in variables.tf
   count         = 1                // instance count of 3
   instance_type = "t2.micro"       //
-  key_name      = "terraform-key"  //.pem key name
+  key_name      = "terraform-key"  //.pem key name.
 
   tags = {
-    Name = "instancedemo-${count.index}" //incrementing the instance tags
+    Name = "instancedemo-${count.index}" //incrementing the instance tags.
   } 
 vpc_security_group_ids = ["${aws_security_group.tf_test_sg.id}"]
   
